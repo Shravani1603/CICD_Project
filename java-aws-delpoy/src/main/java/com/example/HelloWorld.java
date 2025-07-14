@@ -1,5 +1,21 @@
 package com.example;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class HelloWorld {
+
+    @GetMapping("/")
+    public String home(Model model) {
+        model.addAttribute("message", "Hello from Spring Boot deployed with Jenkins on AWS EC2!");
+        return "index"; // Will render templates/index.html
+    }
+}
+/*
+package com.example;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,3 +34,4 @@ public class HelloWorld {
         return "✅ Hello from Spring Boot deployed with Jenkins on AWS EC2!";
     }
 }
+*/
