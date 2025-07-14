@@ -1,4 +1,3 @@
-
 package com.example;
 
 import org.springframework.boot.SpringApplication;
@@ -13,8 +12,8 @@ public class HelloWorld {
         SpringApplication.run(HelloWorld.class, args);
     }
 
-    @GetMapping("/hello")
-    public String sayHello() {
-        return "<h1>Hello from Spring Boot Web App!</h1>";
+    @GetMapping("/")
+    public String hello() {
+        return "Hello, World! Deployed using Jenkins on AWS EC2.";
     }
 }
